@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract Sign {
+contract SignVerifier {
     function verify(address _signer, string calldata _message, bytes calldata _sig) external pure returns (bool) {
         bytes32 msgHash = messageHash(_message);
         bytes32 signedMsgHash = ethSignedMessageHash(msgHash);
